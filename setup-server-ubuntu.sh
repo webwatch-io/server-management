@@ -27,15 +27,15 @@ function addKey {
   curl -s $URI_ROOT/master/keys/$1 >> ~/.ssh/authorized_keys
 }
 
+function installApps {
+  echo Installing apps...
+  sudo apt-get install node
+}
+
 function setProfile {
   echo Setting Bash profile...
   curl -s $URI_ROOT/master/.bashrc > ~/.bashrc
   source ~/.bashrc
-}
-
-function installApps {
-  echo Installing apps...
-  sudo apt-get install node
 }
 
 function end {
@@ -46,6 +46,7 @@ function main {
   applyPatches
   initKeys
   addKey workstation_nimh.pub
+  installApps
   setProfile
   end
 }
