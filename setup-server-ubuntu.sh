@@ -1,6 +1,11 @@
 #!/bin/bash
 # bash <(curl -s https://raw.githubusercontent.com/webwatch-io/server-management/master/setup-server-ubuntu.sh)
 
+#
+# Begin globals
+#
+
+URI_ROOT=https://raw.githubusercontent.com/webwatch-io/server-management
 
 #
 # Begin supporting functions
@@ -18,14 +23,20 @@ function initKeys {
 }
 
 function addKey {
-  echo Adding to authorized_keys: $1
-  curl -s https://raw.githubusercontent.com/webwatch-io/server-management/master/keys/$1 >> ~/.ssh/authorized_keys
+  echo Adding to authorized_keys: $URI_ROOT/master/keys/$1
+  curl -s $URI_ROOT/master/keys/$1 >> ~/.ssh/authorized_keys
+}
+
+function setProfile {
+  echo Setting Bash profile...
+  curl -s $URI_ROOT/master/.bashrc > ~/.bashrc
 }
 
 function main {
   applyPatches
   initKeys
   addKey workstation_nimh.pub
+  setProfile
 }
 
 
