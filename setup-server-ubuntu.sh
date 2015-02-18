@@ -13,7 +13,7 @@ function applyPatches {
 
 function initKeys {
   echo Initialising authorized_keys file...
-  echo > ~/.ssh/authorized_keys
+  echo "# File initialised at $(date)" > ~/.ssh/authorized_keys
   chmod 600 ~/.ssh/authorized_keys
 }
 
