@@ -27,9 +27,14 @@ function addKey {
   curl -s $URI_ROOT/master/keys/$1 >> ~/.ssh/authorized_keys
 }
 
+function installApp {
+  echo Installing $1...
+  sudo apt-get -y install $1
+}
+
 function installApps {
   echo Installing apps...
-  sudo apt-get install node
+  installApp node
 }
 
 function setProfile {
