@@ -33,6 +33,11 @@ function setProfile {
   source ~/.bashrc
 }
 
+function installApps {
+  echo Installing apps...
+  sudo apt-get install node
+}
+
 function end {
   echo "All done!"
 }
