@@ -33,11 +33,16 @@ function setProfile {
   source ~/.bashrc
 }
 
+function end {
+  echo "All done!"
+}
+
 function main {
   applyPatches
   initKeys
   addKey workstation_nimh.pub
   setProfile
+  end
 }
 
 
