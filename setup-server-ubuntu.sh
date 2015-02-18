@@ -34,7 +34,7 @@ function installApp {
 
 function installApps {
   echo Installing apps...
-  installApp node
+  installApp nodejs
 }
 
 function setProfile {
