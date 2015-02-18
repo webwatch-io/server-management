@@ -30,6 +30,7 @@ function addKey {
 function setProfile {
   echo Setting Bash profile...
   curl -s $URI_ROOT/master/.bashrc > ~/.bashrc
+  source ~/.bashrc
 }
 
 function main {
