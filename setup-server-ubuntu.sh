@@ -12,8 +12,8 @@ function applyPatches {
 }
 
 function addPublicKey {
-  echo Adding public key: $1.pub
-  curl -s https://raw.githubusercontent.com/webwatch-io/server-management/master/keys/$1.pub >> ~/.ssh/authorized_keys
+  echo Adding public key: $1
+  curl -s https://raw.githubusercontent.com/webwatch-io/server-management/master/keys/$1 >> ~/.ssh/authorized_keys
 }
 
 function main {
