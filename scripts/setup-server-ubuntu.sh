@@ -32,9 +32,18 @@ function mkDirInstall {
 
 function installScripts {
   echo "Installing scripts"
-  cd "$DIR_INSTALL" && \
-  git init
-  git clone "$URL_INSTALL"
+  cd "$DIR_INSTALL"
+
+  git_output=$(git init)
+
+  if [[ "$git_output" == "Reinitialized"* ]]; then
+    echo "Pulling latest scripts"
+    cd check-management && \
+    git pull
+  else
+    echo "Cloning scripts"
+    git clone "$URL_INSTALL"
+  fi
 }
 
 function printCompletionMessage {
