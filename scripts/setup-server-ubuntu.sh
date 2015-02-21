@@ -21,7 +21,7 @@ function installGit {
 }
 
 function mkDirInstall {
-  if [ !-d "$DIR_INSTALL" ]; then
+  if [ ! -d "$DIR_INSTALL" ]; then
     echo "Creating $DIR_INSTALL"
     mkdir -p "$DIR_INSTALL"
   else
