@@ -5,7 +5,7 @@
 # Begin globals
 #
 
-URI_ROOT=https://raw.githubusercontent.com/webwatch-io/server-management
+URI_ROOT="https://raw.githubusercontent.com/webwatch-io/server-management"
 
 #
 # Begin supporting functions
