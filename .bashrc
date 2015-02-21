@@ -6,3 +6,6 @@ export SUDO_PS1="$1"
 
 # Set terminal title to user@hostname
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}\007"'
+
+# Homebrew compatibility for OSX
+export PATH="/usr/local/bin:$PATH"
