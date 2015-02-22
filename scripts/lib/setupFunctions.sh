@@ -49,9 +49,19 @@ function installApps {
   installServerCheckManagement
 }
 
+function setupSymlink {
+  if [ ! -f "$2" ]; then
+    echo "Setting up symlink: $2->$1"
+    sudo ln -s /usr/bin/nodejs /usr/bin/node
+  else
+    echo "Unable to setup symlink for $2->$1 as $2 already exists"
+    ls -l "$2"
+  fi
+}
+
 function setupSymlinks {
   echo "Setting up symlinks"
-  sudo ln -s /usr/bin/nodejs /usr/bin/node
+  setupSymlink "/usr/bin/nodejs" "/usr/bin/node"
 }
 
 function setProfile {
