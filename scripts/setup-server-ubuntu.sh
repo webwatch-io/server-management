@@ -28,7 +28,7 @@ function mkDirInstall {
   else
     echo "$INSTALL_DIR already created"
   fi
-  chown -R "$INSTALL_USER" "$INSTALL_DIR"
+  sudo chown -R "$INSTALL_USER" "$INSTALL_DIR"
 }
 
 function installScripts {
