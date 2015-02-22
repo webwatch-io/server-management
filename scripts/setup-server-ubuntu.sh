@@ -1,5 +1,5 @@
 #!/bin/bash
-# bash <(curl -s https://raw.githubusercontent.com/webwatch-io/server-management/master/scripts/setup-server-ubuntu.sh?`date`)
+# bash <(curl -s https://raw.githubusercontent.com/webwatch-io/server-management/master/scripts/setup-server-ubuntu.sh)
 
 #
 # Globals
@@ -51,8 +51,8 @@ function installScripts {
 }
 
 function execSetupScripts {
-  echo "Loading setup functions from $INSTALL_DIR/$INSTALL_SUBDIR/scripts/setupFunctions.sh"
-  source "$INSTALL_DIR/$INSTALL_SUBDIR/scripts/setupFunctions.sh" || exit -1
+  echo "Loading setup functions from $INSTALL_DIR/$INSTALL_SUBDIR/scripts/lib/setupFunctions.sh"
+  source "$INSTALL_DIR/$INSTALL_SUBDIR/scripts/lib/setupFunctions.sh" || exit -1
 
   applyPatches
   initKeys
