@@ -11,7 +11,7 @@ function applyPatches {
   echo "Applying OS patches"
   sudo apt-get update
   sudo apt-get -y upgrade
-  sudo apt-get autoremove
+  sudo apt-get -y autoremove
 }
 
 function initKeys {
