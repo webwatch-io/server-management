@@ -66,5 +66,5 @@ function setupSymlinks {
 
 function setProfile {
   echo "Setting Bash profile"
-  curl -s $URL_INSTALL_SERVER_MANAGEMENT_RAW/master/.bashrc > ~/.bashrc
+  curl -s $URL_INSTALL_SERVER_MANAGEMENT_RAW/master/misc/.bashrc > ~/.bashrc
 }
