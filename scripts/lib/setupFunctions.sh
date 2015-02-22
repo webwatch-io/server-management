@@ -9,7 +9,9 @@ source $DIR/globals.sh || exit -1
 
 function applyPatches {
   echo "Applying OS patches"
-  sudo apt-get update && sudo apt-get -y upgrade
+  sudo apt-get update
+  sudo apt-get -y upgrade
+  sudo apt-get autoremove
 }
 
 function initKeys {
