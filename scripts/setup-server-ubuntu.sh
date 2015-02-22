@@ -50,8 +50,8 @@ function installScripts {
 }
 
 function execSetupScripts {
-  echo "Loading setup functions from $INSTALL_DIR/$INSTALL_SUBDIR/setupFunctions.sh"
-  source "$INSTALL_DIR/$INSTALL_SUBDIR/setupFunctions.sh" || exit -1
+  echo "Loading setup functions from $INSTALL_DIR/$INSTALL_SUBDIR/scripts/setupFunctions.sh"
+  source "$INSTALL_DIR/$INSTALL_SUBDIR/scripts/setupFunctions.sh" || exit -1
 
   applyPatches
   initKeys
