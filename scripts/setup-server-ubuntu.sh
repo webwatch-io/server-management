@@ -1,5 +1,5 @@
 #!/bin/bash
-# bash <(curl -s https://raw.githubusercontent.com/webwatch-io/server-management/master/scripts/setup-server-ubuntu.sh)
+# bash <(curl -s https://raw.githubusercontent.com/webwatch-io/server-management/master/scripts/setup-server-ubuntu.sh?`date`)
 
 #
 # Globals
@@ -40,7 +40,8 @@ function installScripts {
   if [[ "$git_output" == "Reinitialized"* ]]; then
     echo "Pulling latest scripts"
     cd "$INSTALL_SUBDIR" && \
-    git pull
+    git fetch --all
+    git reset --hard origin/master
   else
     echo "Cloning scripts"
     git clone "$INSTALL_URL"
