@@ -54,7 +54,7 @@ function setupSymlink {
     echo "Setting up symlink: $2->$1"
     sudo ln -s /usr/bin/nodejs /usr/bin/node
   else
-    echo "Unable to setup symlink for $2->$1 as $2 already exists"
+    echo "Skipping creation of symlink for $2->$1 as $2 already exists"
     ls -l "$2"
   fi
 }
